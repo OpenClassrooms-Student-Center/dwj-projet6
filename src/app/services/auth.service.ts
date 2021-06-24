@@ -37,7 +37,7 @@ export class AuthService {
   }
 
   loginUser(email: string, password) {
-    return new Promise((resolve, reject) => {
+    return new Promise<void>((resolve, reject) => {
       this.http.post('http://localhost:3000/api/auth/login', {email: email, password: password}).subscribe(
         (response: {userId: string, token: string}) => {
           this.userId = response.userId;
