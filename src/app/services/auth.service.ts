@@ -43,7 +43,7 @@ export class AuthService {
           this.userId = response.userId;
           this.authToken = response.token;
           this.isAuth$.next(true);
-          resolve();
+          resolve(response);
         },
         (error) => {
           reject(error);
